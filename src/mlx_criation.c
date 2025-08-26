@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_criation.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lumiguel <lumiguel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lumiguel <lumiguel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 15:19:44 by lumiguel          #+#    #+#             */
-/*   Updated: 2025/08/25 15:26:33 by lumiguel         ###   ########.fr       */
+/*   Updated: 2025/08/26 10:38:49 by lumiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../include/cub3d.h"
 
 void	mlx_creation(t_cub3d *img)
 {
