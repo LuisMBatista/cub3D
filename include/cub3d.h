@@ -6,7 +6,7 @@
 /*   By: lumiguel <lumiguel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 15:12:04 by lumiguel          #+#    #+#             */
-/*   Updated: 2025/08/26 11:47:52 by lumiguel         ###   ########.fr       */
+/*   Updated: 2025/09/08 10:47:00 by lumiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 # include "get_next_line.h"
 # include "ft_printf.h"
 
-# define SCREEN_WIDTH 800
-# define SCREEN_HEIGHT 800
+# define WIDTH 800
+# define HEIGHT 800
 
 typedef struct s_cub3d
 {
@@ -49,6 +49,8 @@ void	mlx_creation2(t_cub3d *img);
 int		handle_key(int keycode,t_index *index);
 int		handle_closing(t_index *index);
 void	free_index(t_index *index);
+void 	clean_exit(t_index *index);
+t_index *init_index(void);
 
 
 

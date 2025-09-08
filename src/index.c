@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   key_press.c                                        :+:      :+:    :+:   */
+/*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lumiguel <lumiguel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 10:59:38 by lumiguel          #+#    #+#             */
-/*   Updated: 2025/08/26 12:32:39 by lumiguel         ###   ########.fr       */
+/*   Created: 2025/09/08 10:37:29 by lumiguel          #+#    #+#             */
+/*   Updated: 2025/09/08 10:55:22 by lumiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/cub3d.h"
 
-int handle_key(int keycode, t_index *index)
+t_index *init_index(void)
 {
-	if (keycode == 65307)
-		clean_exit(index);
-	return(0);
-}
+	t_index *index = malloc(sizeof(t_index));
+	if (!index)
+		return(NULL);
 
-int handle_closing(t_index *index)
-{
-	clean_exit(index);
-	return (0);
+	index->cub3d= malloc(sizeof(t_cub3d));
+	if (!index->cub3d)
+	{
+		free(index);
+		return(NULL);
+	}
+	mlx_creation(index->cub3d);
+	return(index);
 }
-

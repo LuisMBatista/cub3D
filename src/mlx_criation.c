@@ -6,63 +6,63 @@
 /*   By: lumiguel <lumiguel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 15:19:44 by lumiguel          #+#    #+#             */
-/*   Updated: 2025/08/26 10:38:49 by lumiguel         ###   ########.fr       */
+/*   Updated: 2025/09/08 10:55:11 by lumiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/cub3d.h"
 
-void	mlx_creation(t_cub3d *img)
+void	mlx_creation(t_cub3d *cub)
 {
-	img->mlx_connection = mlx_init();
-	if (!img->mlx_connection)
+	cub->mlx_connection = mlx_init();
+	if (!cub->mlx_connection)
 	{
 		ft_printf("Error: Failed to initialize mlx_connection.\n");
-		free(img);
+		free(cub);
 		exit (0);
 	}
-	img->mlx_win = mlx_new_window(
-			img->mlx_connection,
-			SCREEN_WIDTH,
-			SCREEN_HEIGHT,
+	cub->mlx_win = mlx_new_window(
+			cub->mlx_connection,
+			WIDTH,
+			HEIGHT,
 			"Quack"
 			);
-	if (!img->mlx_win)
+	if (!cub->mlx_win)
 	{
 		ft_printf("Error: Failed to create window.\n");
-		mlx_destroy_display(img->mlx_connection);
-		free(img->mlx_connection);
-		free(img);
+		mlx_destroy_display(cub->mlx_connection);
+		free(cub->mlx_connection);
+		free(cub);
 		exit (0);
 	}
-	mlx_creation2(img);
+	mlx_creation2(cub);
 }
 
-void	mlx_creation2(t_cub3d *img)
+void	mlx_creation2(t_cub3d *cub)
 {
-	img->img = mlx_new_image(img->mlx_connection, SCREEN_WIDTH, SCREEN_HEIGHT);
-	if (!img->img)
+	cub->img = mlx_new_image(cub->mlx_connection, WIDTH, HEIGHT);
+	if (!cub->img)
 	{
 		ft_printf("Error: Failed to create image.\n");
-		mlx_destroy_window(img->mlx_connection, img->mlx_win);
-		mlx_destroy_display(img->mlx_connection);
-		free(img->mlx_connection);
-		free(img);
+		mlx_destroy_window(cub->mlx_connection, cub->mlx_win);
+		mlx_destroy_display(cub->mlx_connection);
+		free(cub->mlx_connection);
+		free(cub);
 		exit (0);
 	}
-	img->addr = mlx_get_data_addr(
-			img->img,
-			&img->bits_per_pixel,
-			&img->line_length,
-			&img->endian);
-	if (!img->addr)
+	cub->addr = mlx_get_data_addr(
+			cub->img,
+			&cub->bits_per_pixel,
+			&cub->line_length,
+			&cub->endian);
+	if (!cub->addr)
 	{
 		ft_printf("Error: Failed to get data address for image.\n");
-		mlx_destroy_image(img->mlx_connection, img->img);
-		mlx_destroy_window(img->mlx_connection, img->mlx_win);
-		mlx_destroy_display(img->mlx_connection);
-		free(img->mlx_connection);
-		free(img);
+		mlx_destroy_image(cub->mlx_connection, cub->img);
+		mlx_destroy_window(cub->mlx_connection, cub->mlx_win);
+		mlx_destroy_display(cub->mlx_connection);
+		free(cub->mlx_connection);
+		free(cub);
 		exit (0);
 	}
 }
