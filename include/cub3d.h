@@ -6,7 +6,7 @@
 /*   By: lumiguel <lumiguel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 15:12:04 by lumiguel          #+#    #+#             */
-/*   Updated: 2025/09/11 16:54:17 by lumiguel         ###   ########.fr       */
+/*   Updated: 2025/09/19 16:05:40 by lumiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ void	ft_putstr_fd(char *s, int fd);
 //map 
 t_map	*file_validation(char *file);
 t_map	*map_validation( int fd, t_map *map);
-int		get_lenght(int fd, char *line);
+void	get_size(int fd, char *line, t_map *map);
+t_map	*map_alloc(t_map *map, int fd);
+void	print_map(t_map *map);
 
 #endif
