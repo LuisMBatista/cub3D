@@ -6,7 +6,7 @@
 /*   By: lumiguel <lumiguel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 15:12:04 by lumiguel          #+#    #+#             */
-/*   Updated: 2025/09/19 16:05:40 by lumiguel         ###   ########.fr       */
+/*   Updated: 2025/09/19 16:38:48 by lumiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ bool	arg_validation(int argc, char **argv);
 //cleanup
 void	free_index(t_index *index);
 void 	clean_exit(t_index *index);
+void	free_map(t_map *map);
 
 //error handling
 void	ft_putstr_fd(char *s, int fd);

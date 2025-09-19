@@ -6,7 +6,7 @@
 /*   By: lumiguel <lumiguel@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 15:14:49 by lumiguel          #+#    #+#             */
-/*   Updated: 2025/09/11 15:14:19 by lumiguel         ###   ########.fr       */
+/*   Updated: 2025/09/19 16:38:30 by lumiguel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,13 @@ void clean_exit(t_index *index)
 
 	free(index->cub3d->mlx_connection);
 	index->cub3d->mlx_connection = NULL;
-
+	
+	free_map(index->map);
 	free(index->cub3d);
 	index->cub3d = NULL;
 
 	free(index);
 	exit(0);
 }
+
+
